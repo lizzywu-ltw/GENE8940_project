@@ -13,7 +13,7 @@
 module load Trimmomatic
 
 #name indir and outdir
-indir="/work/nclab/data/Hawco/25099FL_06_01_01"
+indir="/work/nclab/data/hawcofrag/25099FL_06_01_01"
 outdir="/work/nclab/lizzy/GENE8940_project"
 
 # Define adapter file path
