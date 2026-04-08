@@ -47,4 +47,4 @@ for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
     else
         echo "Warning: R2 file not found for $sample_prefix, skipping."
     fi
-done
+done 
