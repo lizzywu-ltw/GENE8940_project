@@ -10,9 +10,8 @@
 #SBATCH --error=ribodetector.err
 #SBATCH --mail-user=etw33155@uga.edu
 #SBATCH --mail-type=END,FAIL
-
-CONDA_BASE=$(conda info --base)
-source ${CONDA_BASE}/etc/profile.d/conda.sh
+source ~/.bashrc
+conda activate ribodetector_env
 
 export OMP_NUM_THREADS=20
 indir="/work/nclab/lizzy/GENE8940_project/trimmed_reads"
