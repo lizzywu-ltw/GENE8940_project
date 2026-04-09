@@ -11,7 +11,7 @@
 #SBATCH --mail-user=etw33155@uga.edu
 #SBATCH --mail-type=END,FAIL
 
-source ~/.bashrc
+source ~/miniconda3/etc/profile.d/conda.sh
 conda activate ribodetector_env
 
 export OMP_NUM_THREADS=20
@@ -42,7 +42,7 @@ for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
         echo "R1: $(basename "$r1_file")"
         echo "R2: $(basename "$r2_file")"
 
-        ribodetector_cpu -t 20 -l 151 \
+        ribodetector_cpu -t 8 -l 151 \
             -i "$r1_file" "$r2_file" \
             -e rrna \
             --chunk_size 128 \
