@@ -11,8 +11,11 @@
 #SBATCH --mail-user=etw33155@uga.edu
 #SBATCH --mail-type=END,FAIL
 
-source /home/etw33155/conda/etc/profile.d/conda.sh
+source ~/conda/etc/profile.d/conda.sh
 conda activate ribodetector_env
+echo "Running on: $(hostname)"
+echo "Conda env: $CONDA_DEFAULT_ENV"
+which ribodetector_cpu
 
 export OMP_NUM_THREADS=20
 indir="/work/nclab/lizzy/GENE8940_project/trimmed_reads"
