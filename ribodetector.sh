@@ -18,6 +18,7 @@ export OMP_NUM_THREADS=20
 indir="/work/nclab/lizzy/GENE8940_project/trimmed_reads"
 outdir="/work/nclab/lizzy/GENE8940_project/ribodetector"
 
+shopt -s nullglob
 
 for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
     # Extract the sample prefix by removing _R1_trimmed_paired.fastq.gz
