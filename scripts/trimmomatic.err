@@ -1,0 +1,16 @@
+TrimmomaticPE: Started with arguments:
+ /work/nclab/data/Hawco/25099FL_06_01_01/*_R1_001.fastq.gz /work/nclab/data/Hawco/25099FL_06_01_01/*_R2_001.fastq.gz /work/nclab/lizzy/GENE8940_project/*_R1_trimmed_paired.fastq.gz /work/nclab/lizzy/GENE8940_project/*_R1_trimmed_unpaired.fastq.gz /work/nclab/lizzy/GENE8940_project/*_R2_trimmed_paired.fastq.gz /work/nclab/lizzy/GENE8940_project/*_R2_trimmed_unpaired.fastq.gz ILLUMINACLIP:/work/nclab/lizzy/hawcofrag/scripts/adapters.fa:2:30:7 LEADING:2 TRAILING:2 SLIDINGWINDOW:4:2 MINLEN:50
+Using Long Clipping Sequence: 'GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCA'
+Using Medium Clipping Sequence: 'CTGTCTCTTATACACATCT'
+Using Long Clipping Sequence: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT'
+Skipping duplicate Clipping Sequence: 'CTGTCTCTTATACACATCT'
+ILLUMINACLIP: Using 0 prefix pairs, 4 forward/reverse sequences, 0 forward only sequences, 0 reverse only sequences
+Exception in thread "main" java.io.FileNotFoundException: /work/nclab/data/Hawco/25099FL_06_01_01/*_R1_001.fastq.gz (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parse(FastqParser.java:135)
+	at org.usadellab.trimmomatic.TrimmomaticPE.process(TrimmomaticPE.java:265)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:555)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
