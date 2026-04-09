@@ -11,7 +11,7 @@
 #SBATCH --mail-user=etw33155@uga.edu
 #SBATCH --mail-type=END,FAIL
 
-source ~/miniconda3/etc/profile.d/conda.sh
+source /home/etw33155/conda/etc/profile.d/conda.sh
 conda activate ribodetector_env
 
 export OMP_NUM_THREADS=20
