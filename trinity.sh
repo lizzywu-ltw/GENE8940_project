@@ -14,9 +14,15 @@
 # Load module
 module load Trinity/2.15.2-foss-2023a
 
+# Define LHS reads 
+left_reads="/work/nclab/lizzy/GENE8940_project/GENE8940_project-1/ribo_output/*R1.fq"
+
+# Define RHS reads 
+right_reads="/work/nclab/lizzy/GENE8940_project/GENE8940_project-1/ribo_output/*R2.fq"
+
 $TRINITY_DIR/Trinity --seqType fq \
---left  \
---right  \
+--left $left_reads \
+--right $right_reads \
 --SS_lib_type RF \
 --max_memory 2G \
 --CPU 2 \
