@@ -7,14 +7,14 @@
 #SBATCH --output=%x.out
 #SBATCH --error=%x.err
 #SBATCH --mail-user=etw33155@uga.edu
-#SBATCH --mail-user=etw22155@uga.edu
+#SBATCH --mail-type=END,FAIL
 
 #load modules FastQC and MultiQC before running
 module load FastQC
 module load MultiQC
 
-indir=/work/nclab/lizzy/GENE8940_project/ribodetector
-outdir=/work/nclab/lizzy/GENE8940_project/fastqc
+indir=/work/nclab/lizzy/GENE8940_project/GENE8940_project-1/ribo_output
+outdir=/work/nclab/lizzy/GENE8940_project/GENE8940_project-1/fastQC_output
 
 
 fastqc $indir/*.fq -o $outdir

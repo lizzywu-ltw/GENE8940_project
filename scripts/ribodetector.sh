@@ -19,7 +19,7 @@ which ribodetector_cpu
 
 export OMP_NUM_THREADS=20
 indir="/work/nclab/lizzy/GENE8940_project/trimmed_reads"
-outdir="/work/nclab/lizzy/GENE8940_project/GENE8040_project-1/ribo_output"
+outdir="/work/nclab/lizzy/GENE8940_project/GENE8940_project-1/ribo_output"
 
 
 for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
@@ -34,7 +34,7 @@ for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
     out_r2="$outdir/${sample_prefix}.R2.fq"
 
     # Check if output files already exist
-    if [[ -f "$out_r1" && -f "$out_r2" ]]; then
+    if [[ -s "$out_r1" && -s "$out_r2" ]]; then
         echo "Sample $sample_prefix already processed, skipping."
         continue
     fi
@@ -45,11 +45,11 @@ for r1_file in "$indir"/*_R1_trimmed_paired.fastq.gz; do
         echo "R1: $(basename "$r1_file")"
         echo "R2: $(basename "$r2_file")"
 
-        ribodetector_cpu -t 8 -l 151 \
+        ribodetector_cpu -t 20 -l 151 \
             -i "$r1_file" "$r2_file" \
             -e rrna \
             --chunk_size 128 \
-            -o "$outdir/${sample_prefix}.R1.fq" "$outdir/${sample_prefix}.R2.fq"
+            -o "$out_r1" "$out_r2"
     else
         echo "Warning: R2 file not found for $sample_prefix, skipping."
     fi
