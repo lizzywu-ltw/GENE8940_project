@@ -19,7 +19,6 @@ mkdir -p salmon_out
 # load modules
 module load Trinity/2.15.2-foss-2023a
 module load Salmon/1.10.3-GCC-12.3.0
-module load BUSCO/6.0.0-conda
 
 # create index
 salmon index \
@@ -44,10 +43,3 @@ done
 
 # quality stats with Trinity
 $TRINITY_HOME/util/TrinityStats.pl $assembly > trinity_stats.txt
-
-# quality assessment with Busco 
-busco \
-  -i $assembly \
-  -l eukaryota_odb10 \
-  -m transcriptome \
-  -o busco_out
