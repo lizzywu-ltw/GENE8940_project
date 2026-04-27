@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=batch
-#SBATCH --time=96:00:00
+#SBATCH --time= 48:00:00
 #SBATCH --job-name=transdecoder
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=12
