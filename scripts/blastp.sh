@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition=batch
-#SBATCH --time=48:00:00
+#SBATCH --time=24:00:00
 #SBATCH --job-name=blastp
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=12
